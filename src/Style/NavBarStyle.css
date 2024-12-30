@@ -1,0 +1,15 @@
+.navbar .active , .fa {
+    font-size: 20px;
+    font-weight: 600px;
+}
+.nav-link:focus{
+    border-bottom: 2px solid rgba(255, 119, 87, 1);
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+.navbar .logo img {
+    width: 20px;
+    height: 25px;
+}

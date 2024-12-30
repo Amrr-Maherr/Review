@@ -1,0 +1,25 @@
+h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+.hr {
+    background-color: rgba(237, 184, 44, 1);
+    height: 3px;
+}
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(237, 184, 44, 1);
+    width: 149px;
+    height: 44px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}

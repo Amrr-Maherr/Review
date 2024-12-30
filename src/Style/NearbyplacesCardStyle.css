@@ -1,0 +1,26 @@
+h5 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.card {
+    min-height: 122px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card img {
+    max-width: 100%;
+    /* خلي الصورة مستجيبة */
+    height: auto;
+    max-height: 90px;
+    border-radius: 8px;
+}

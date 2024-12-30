@@ -1,0 +1,44 @@
+.Cafes-title , .Restaurants-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+.Cafes-text , .Restaurants-text  {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+.Restaurants-Card {
+    background-image: url(../Assets/Cafes.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 601px;
+    height: 560px;
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+.Cafes-Card {
+    background-image: url(../Assets/Restaurants.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 601px;
+    height: 560px;
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+.Restaurants-button , .Cafes-button  {
+    background-color: #EDB82C;
+    color: white;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}

@@ -1,0 +1,35 @@
+.Hero {
+    background-color: rgba(0, 0, 0, 0.945);
+    background-image: url(../Assets/Hero-Image.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 700;
+}
+.hero-buttons button {
+    -o-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
+.hero-buttons  .Register {
+    background-color: rgba(255, 119, 87, 1);
+    width: 131px;
+        height: 48px;
+}
+.hero-buttons  .Register:active {
+    background-color: rgba(237, 184, 44, 1);
+}
+.hero-buttons  .log {
+    background-color: rgba(255, 118, 87, 0);
+    width: 131px;
+        height: 48px;
+}
