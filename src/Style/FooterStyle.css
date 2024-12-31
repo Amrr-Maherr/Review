@@ -14,6 +14,10 @@ footer li {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    margin: 15px 0px;
+}
+footer ul {
+    margin: 10px 0px;
 }
 footer .form .btn {
     max-width: 163px;
@@ -30,7 +34,7 @@ footer .form .btn {
     font-weight: 600;
 }
 footer .form input {
-    min-width: 315px;
+    max-width: 315px;
     height: 72px;
     background-color: #D0A22633;
 }
