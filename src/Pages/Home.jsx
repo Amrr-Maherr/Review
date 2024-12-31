@@ -3,7 +3,9 @@ import NavBar from "../Componants/NavBar";
 import NearbyPlaces from "../Componants/Nearbyplaces";
 import "../Style/HomeStyle.css"
 import Categories from "../Componants/Categories";
+import { useState } from "react";
 function Home() {
+  const token = localStorage.getItem("authToken");
     return (
       <>
         <NavBar />
@@ -16,27 +18,33 @@ function Home() {
                   وابتكار
                 </h1>
               </div>
-              <div className="hero-buttons">
-                <Link
-                  to="/"
-                  className="Register btn text-white text-decoration-none"
-                >
-                  تسجيل
-                </Link>
-                <Link
-                  to="/register"
-                  className="log btn text-white text-decoration-none"
-                >
-                  تسجيل دخول
-                </Link>
-              </div>
+              {token ? (
+                ""
+              ) : (
+                <>
+                  <div className="hero-buttons">
+                    <Link
+                      to="/"
+                      className="Register btn text-white text-decoration-none"
+                    >
+                      تسجيل
+                    </Link>
+                    <Link
+                      to="/register"
+                      className="log btn text-white text-decoration-none"
+                    >
+                      تسجيل دخول
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <div className="container">
             <NearbyPlaces />
           </div>
           <div className="container my-3">
-            <Categories/>
+            <Categories />
           </div>
         </section>
       </>
