@@ -3,7 +3,10 @@ import NavBar from "../Componants/NavBar";
 import NearbyPlaces from "../Componants/Nearbyplaces";
 import "../Style/HomeStyle.css"
 import Categories from "../Componants/Categories";
+import BestPlaces from "../Componants/BestPlaces.jsx";
 import { useState } from "react";
+import CustomerReviews from "../Componants/CustomerReviews.jsx";
+import Footer from "../Componants/Footer.jsx";
 function Home() {
   const token = localStorage.getItem("authToken");
     return (
@@ -43,9 +46,16 @@ function Home() {
           <div className="container">
             <NearbyPlaces />
           </div>
-          <div className="container my-3">
+          <div className="container my-5">
             <Categories />
           </div>
+          <div className="container my-5">
+            <BestPlaces/>
+          </div>
+          <div className="container my-5">
+            <CustomerReviews/>
+          </div>
+          <Footer/>
         </section>
       </>
     );

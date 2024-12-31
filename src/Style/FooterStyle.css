@@ -1,0 +1,41 @@
+footer {
+    background-color: #D4DDB7;
+}
+footer h4 {
+    font-size: 64px;
+    font-weight: 400;
+}
+footer h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+footer li {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+footer .form .btn {
+    max-width: 163px;
+    max-height: 73px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    background-color: #D0A226;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+footer .form input {
+    min-width: 315px;
+    height: 72px;
+    background-color: #D0A22633;
+}
+footer .form input::placeholder {
+    color: #D0A226;
+    font-size: 20px;
+    font-weight: 600;
+}

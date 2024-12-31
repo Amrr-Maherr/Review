@@ -2,7 +2,6 @@
     background-color: rgba(0, 0, 0, 0.945);
     background-image: url(../Assets/Hero-Image.png);
     background-position: center center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }

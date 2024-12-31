@@ -1,0 +1,15 @@
+.card-place {
+    max-width: 300px;
+    max-height: 385px;
+    -o-border-radius: 26px;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    -ms-border-radius: 26px;
+    border-radius: 26px;
+}
+.card-place img {
+    max-width: 300px;
+    max-height: 203px;
+}
+.card-place-body {
+}

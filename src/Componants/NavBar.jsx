@@ -5,7 +5,7 @@ import "../Style/NavBarStyle.css";
 function NavBar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg fixed-top">
+      <nav className="navbar navbar-expand-lg fixed-top bg-white">
         <div className="container">
           <button
             className="navbar-toggler text-white"
@@ -20,41 +20,41 @@ function NavBar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 d-flex gap-4 mb-lg-0">
-              <li className="nav-item">
-                <Link className="active text-white" to="/">
+              <li className="nav-item ">
+                <Link className="active text-dark" to="/">
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="active text-white" to="/">
+                <Link className="active text-dark" to="/">
                   <i className="fa-regular fa-heart"></i>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="active text-white" to="/">
+                <Link className="active text-dark" to="/">
                   <i className="fa-regular fa-bell"></i>
                 </Link>
               </li>
             </ul>
             <ul className="navbar-nav me-auto mb-2 d-flex gap-4 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active text-white" to="#">
+                <Link className="nav-link active text-dark" to="#">
                   اتصل بنا
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active text-white" to="#">
+                <Link className="nav-link active text-dark" to="#">
                   استكشف
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active text-white" to="#">
+                <Link className="nav-link active text-dark" to="#">
                   الرئيسية
                 </Link>
               </li>
             </ul>
           </div>
-          <Link className="navbar-brand active logo text-white" to="#">
+          <Link className="navbar-brand active logo text-dark" to="#">
             دليل المدينة <img src={Logo} alt="Logo" />
           </Link>
         </div>
