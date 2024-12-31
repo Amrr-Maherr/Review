@@ -1,35 +1,67 @@
 section {
     background-color: #F9F9F9;
 }
-/*  */
+
 .from-title h3 {
     font-size: 40px;
     font-weight: 700;
 }
+
 .from-title p {
     font-size: 14px;
     font-weight: 500;
     color: #A1A8B0;
 }
+
+/* تنسيقات صورة الدخول */
 .login-img {
     max-width: 633px;
     max-height: 633px;
 }
+
 .login-img img {
     width: 100%;
     height: 100%;
 }
-/*  */
-input {
+
+/* تنسيقات الحقول */
+.login-form input {
+    max-width: 545px;
+    max-height: 49px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
     border: 1px solid #E5E7EB;
-    width: 454px;
-    height: 59px;
 }
-input::placeholder {
+
+.login-form input::placeholder {
     color: #A1A8B0;
     font-size: 16px;
     font-weight: 400;
+    padding: 0px 25px;
 }
+
+/* تنسيقات الأيقونات داخل الحقول */
+.position-relative {
+    position: relative;
+}
+
+.email-icon,
+.password-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* المسافة من الجهة اليمنى */
+    transform: translateY(-50%);
+    /* لضبط الأيقونة عمودياً في المنتصف */
+    font-size: 1.2rem;
+    color: #aaa;
+    /* يمكنك تغيير اللون حسب رغبتك */
+}
+
+/* تنسيقات الزر */
 .button {
     -o-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -42,7 +74,10 @@ input::placeholder {
     font-size: 16px;
     font-weight: 700;
 }
+
+/* تنسيق رابط "هل نسيت كلمة السر؟" */
 .forget-password {
     font-size: 20px;
     font-weight: 600;
+    color: #F40000;
 }

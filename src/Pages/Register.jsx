@@ -1,41 +1,32 @@
-// استيراد صورة التسجيل من المجلد المحلي
 import RegisterImg from "../Assets/Register.png";
-
-// استيراد useRef علشان نقدر نتحكم في المدخلات بشكل مباشر
-import { useRef } from "react";
-
-// استيراد ملف الـ CSS علشان ننسق الصفحة
+import { useRef, useState } from "react";
 import "../Style/RegisterStyle.css";
-
-// استيراد مكتبة SweetAlert2 لعرض الرسائل المنبثقة
 import Swal from "sweetalert2";
-
-// استيراد مكون الـ SubNav علشان نعرض شريط التنقل
 import SubNav from "../Componants/SubNav";
-
-// استيراد مكتبة axios علشان نعمل طلبات HTTP
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
-  // هنا بنعرف مراجع المدخلات علشان نقدر نستخدمها في الحصول على القيم المدخلة
-  const FNameInput = useRef(); // مرجع الاسم الأول
-  const SNameInput = useRef(); // مرجع الاسم الثاني
-  const EmailInput = useRef(); // مرجع البريد الإلكتروني
-  const NumberInput = useRef(); // مرجع رقم الهاتف
-  const PasswordInput = useRef(); // مرجع كلمة السر
+  const [show, setShow] = useState(true);
+  const navigate = useNavigate(); // هنا يجب استدعاء الدالة
+  const showPassWord = () => {
+    setShow((prevShow) => !prevShow);
+    console.log("test");
+  };
+  const FNameInput = useRef();
+  const SNameInput = useRef();
+  const EmailInput = useRef();
+  const NumberInput = useRef();
+  const PasswordInput = useRef();
 
-  // الدالة دي هتشتغل لما المستخدم يبعت الفورم
   const handleRegister = (e) => {
-    e.preventDefault(); // هنا بنمنع الصفحة من التحديث التلقائي لما المستخدم يبعت الفورم
+    e.preventDefault();
+    const firstName = FNameInput.current.value.trim();
+    const secondName = SNameInput.current.value.trim();
+    const email = EmailInput.current.value.trim();
+    const phoneNumber = NumberInput.current.value.trim();
+    const password = PasswordInput.current.value.trim();
 
-    // بنجيب القيم المدخلة من المدخلات ونشيل المسافات الفاضية
-    const firstName = FNameInput.current.value.trim(); // قيمة الاسم الأول
-    const secondName = SNameInput.current.value.trim(); // قيمة الاسم الثاني
-    const email = EmailInput.current.value.trim(); // قيمة البريد الإلكتروني
-    const phoneNumber = NumberInput.current.value.trim(); // قيمة رقم الهاتف
-    const password = PasswordInput.current.value.trim(); // قيمة كلمة السر
-
-    // هنا بنشوف إذا كانت في أي خانة فاضية
     if (
       firstName === "" ||
       secondName === "" ||
@@ -43,17 +34,15 @@ function Register() {
       phoneNumber === "" ||
       password === ""
     ) {
-      // لو في خانات فاضية، بنعرض رسالة خطأ
       Swal.fire({
         icon: "error",
         title: "عذرًا...",
         text: "يرجى ملء جميع الحقول!",
-        background: "#F9F9F9", // الخلفية بلون فاتح
-        confirmButtonColor: "red", // لون الزرار هيبقى أحمر
+        background: "#F9F9F9",
+        confirmButtonColor: "red",
         confirmButtonText: "حسنا",
       });
     } else {
-      // لو مفيش خانات فاضية، بنحضر بيانات التسجيل
       const formData = {
         name: `${firstName} ${secondName}`,
         email: email,
@@ -61,24 +50,26 @@ function Register() {
         password: password,
       };
 
-      // بنبعت البيانات دي للسيرفر باستخدام axios
       axios
         .post("https://dalil.mlmcosmo.com/api/register", formData)
         .then((response) => {
-          const token = response.data.token; // لو في توكن رجع من السيرفر بنحفظه
+          const token = response.data.token;
           if (token) {
-            // لو فيه توكن، بنخزنه في localStorage علشان نستخدمه في المستقبل
             localStorage.setItem("authToken", token);
-            // بنعرض رسالة نجاح
             Swal.fire({
               title: "تمت العملية بنجاح",
               text: "لقد تم تسجيل حسابك بنجاح",
               icon: "success",
               background: "#F9F9F9",
-              confirmButtonColor: "#EDB82C", // لون الزرار ده هيكون دهبي
-              confirmButtonText: "تسجيل الدخول", // نص الزرار هيبقى "تسجيل الدخول"
+              confirmButtonColor: "#EDB82C",
+              confirmButtonText: "تسجيل الدخول",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                navigate("/"); // التنقل هنا بعد التسجيل
+              }
             });
-            // بعد التسجيل الناجح، بنمحي القيم المدخلة
+
+            // مسح البيانات بعد التسجيل
             FNameInput.current.value = "";
             SNameInput.current.value = "";
             EmailInput.current.value = "";
@@ -88,7 +79,6 @@ function Register() {
         })
         .catch((error) => {
           if (error) {
-            // لو حصل أي خطأ أثناء التسجيل، بنعرض رسالة خطأ
             Swal.fire({
               icon: "error",
               title: "فشل التسجيل",
@@ -100,71 +90,95 @@ function Register() {
 
   return (
     <>
-      {/* هنا بنعرض شريط التنقل العلوي */}
       <SubNav />
       <section>
-        <div className="container">
+        <div className="container py-2">
           <div className="row d-flex align-item-center justify-content-between">
             <div className="col-xl-6 col-12">
-              {/* هنا بنعرض صورة التسجيل */}
               <div className="register-img">
                 <img src={RegisterImg} alt="Registration" />
               </div>
             </div>
             <div className="col-xl-6 col-12 text-end">
-              {/* هنا بنعرض عنوان التسجيل والنص اللي تحت */}
               <div className="register-title">
                 <h3>تسجيل جديد</h3>
                 <p>دعنا نساعدك جميعًا حتى تتمكن من الوصول إلى حسابك الشخصي.</p>
               </div>
-              {/* هنا الفورم اللي بيحتوي على المدخلات */}
-              <form className="row g-4" onSubmit={handleRegister}>
+              <form className="row g-4 register-form" onSubmit={handleRegister}>
                 {/* حقل الاسم الثاني */}
-                <div className="col-md-6">
+                <div className="col-md-6 input-container">
                   <input
                     type="text"
                     className="form-control text-end"
                     placeholder="أدخل اسم العائله"
-                    ref={SNameInput} // ربط الحقل بمراجعته
+                    ref={SNameInput}
                   />
+                  <i className="fa-regular fa-user input-icon"></i>
                 </div>
                 {/* حقل الاسم الأول */}
-                <div className="col-md-6">
+                <div className="col-md-6 input-container">
                   <input
                     type="text"
                     className="form-control text-end"
                     placeholder="أدخل الاسم الاول"
-                    ref={FNameInput} // ربط الحقل بمراجعته
+                    ref={FNameInput}
                   />
+                  <i className="fa-regular fa-user input-icon"></i>
                 </div>
                 {/* حقل الايميل */}
-                <div className="col-12">
+                <div className="col-12 input-container">
                   <input
                     type="email"
                     className="form-control text-end"
                     placeholder="أدخل بريدك الإلكتروني"
-                    ref={EmailInput} // ربط الحقل بمراجعته
+                    ref={EmailInput}
                   />
+                  <i className="fa-regular fa-envelope input-icon"></i>
                 </div>
                 {/* حقل رقم الهاتف */}
-                <div className="col-12">
+                <div className="col-12 input-container">
                   <input
                     type="number"
                     className="form-control text-end"
                     placeholder="أدخل رقم الهاتف الخاص بك"
-                    ref={NumberInput} // ربط الحقل بمراجعته
+                    ref={NumberInput}
                   />
+                  <i className="fa-solid fa-phone-flip input-icon"></i>
                 </div>
                 {/* حقل كلمة السر */}
-                <div className="col-12">
-                  <input
-                    type="password"
-                    className="form-control text-end"
-                    placeholder="أدخل كلمة المرور الخاصة بك"
-                    ref={PasswordInput} // ربط الحقل بمراجعته
-                  />
-                </div>
-                {/* الزرار اللي بيبعث البيانات */}
+                {show ? (
+                  <>
+                    <div className="col-12 input-container password-container">
+                      <input
+                        type="password"
+                        className="form-control text-end"
+                        placeholder="أدخل كلمة المرور الخاصة بك"
+                        ref={PasswordInput}
+                      />
+                      <i className="fa-solid fa-lock input-icon"></i>
+                      <i
+                        className="fa-regular fa-eye password-toggle-icon"
+                        onClick={showPassWord}
+                      ></i>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="col-12 input-container password-container">
+                      <input
+                        type="text"
+                        className="form-control text-end"
+                        placeholder="أدخل كلمة المرور الخاصة بك"
+                        ref={PasswordInput}
+                      />
+                      <i className="fa-solid fa-lock input-icon"></i>
+                      <i
+                        className="fa-regular fa-eye-slash password-toggle-icon"
+                        onClick={showPassWord}
+                      ></i>
+                    </div>
+                  </>
+                )}
                 <div className="col-12">
                   <div className="register-btn">
                     <button type="submit" className="d-block w-100">
@@ -172,7 +186,6 @@ function Register() {
                     </button>
                   </div>
                 </div>
-                {/* خانة الموافقة على الشروط */}
                 <div className="col-12">
                   <div className="form-check d-flex align-items-center justify-content-end gap-4">
                     <input
@@ -181,7 +194,7 @@ function Register() {
                       id="gridCheck"
                     />
                     <label
-                      className="form-check-label order-1"
+                      className="form-check-label order-1 mx-2"
                       htmlFor="gridCheck"
                     >
                       وافق على <span>شروط الخدمة</span> وسياسة الخصوصية{" "}

@@ -1,0 +1,72 @@
+.PassCode-password-img {
+    max-width: 600px;
+    max-height: 400px;
+}
+
+.PassCode-password-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.PassCode-password-form input {
+    width: 85px;
+    height: 85px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    border: 1px solid #EDB82C;
+    font-size: 32px;
+    font-weight: 700;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.PassCode-password-form input:focus {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.PassCode-password-link a {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.PassCode-password-title h3 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.PassCode-password-title p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #A1A8B0;
+}
+
+.PassCode-password-button button {
+    color: white;
+    background-color: #EDB82C;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.PassCode-password-SubLink {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.PassCode-password-SubLink a {
+    color: #EDB82C;
+    text-decoration: none;
+}
+
+.PassCode-password-SubLink span {
+    color: #717784;
+}

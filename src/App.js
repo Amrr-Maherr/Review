@@ -9,6 +9,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LogIn from "./Pages/LogIn";
 import Register from "./Pages/Register";
 import ForgetPassword from "./Pages/ForgetPassword";
+import PassCode from "./Pages/PassCode";
+import ResetPassword from "./Pages/ResetPassword";
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="home" element={<Home />} />
-          <Route path="/" element={<LogIn/>} />
-          <Route path="register" element={<Register/>} />
-          <Route path="forget-password" element={<ForgetPassword/>} />
+          <Route path="/" element={<LogIn />} />
+          <Route path="register" element={<Register />} />
+          <Route path="forget-password" element={<ForgetPassword />} />
+          <Route path="reset-password" element={<ResetPassword/>} />
+          <Route path="verify-code" element={<PassCode />} />
         </Routes>
       </div>
     </BrowserRouter>
