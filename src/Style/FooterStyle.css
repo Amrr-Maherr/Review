@@ -10,11 +10,12 @@ footer h3 {
     font-weight: 700;
     margin-bottom: 5px;
 }
-footer li {
+footer .list-unstyled li a , .profile {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     margin: 15px 0px;
+    color: black;
 }
 footer ul {
     margin: 10px 0px;

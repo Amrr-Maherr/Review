@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../Style/FooterStyle.css";
 
 function Footer() {
@@ -20,27 +21,59 @@ function Footer() {
             <div className="col-xl-3 col-md-6 col-12 text-center mb-4">
               <h3>معلومات</h3>
               <ul className="list-unstyled">
-                <li>الاماكن</li>
-                <li>الدعم</li>
-                <li>البنود</li>
-                <li>الخصوصيه</li>
+                <li>
+                  <a href="" className="text-decoration-none ">
+                    الاماكن
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-decoration-none ">
+                    الدعم
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-decoration-none ">
+                    البنود
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-decoration-none ">
+                    الخصوصيه
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="col-xl-3 col-md-6 col-12 text-center mb-4">
               <h3>القائمه</h3>
               <ul className="list-unstyled">
-                <li>الرئيسيه</li>
-                <li>الصفحه الشخصيه</li>
+                <li>
+                  <Link to="/home" className="text-decoration-none ">
+                    الرئيسيه
+                  </Link>
+                </li>
+                <Link to="/profile" className="text-decoration-none profile">
+                  الصفحه الشخصيه
+                </Link>
                 <li>المفضله</li>
               </ul>
             </div>
             <div className="col-xl-3 col-md-6 col-12 text-center mb-4">
               <h3>دليل المدينه</h3>
               <ul className="list-unstyled">
-                <li>"هذا نص وهمي يُستخدم لأغراض التصميم</li>
-                <li>والعرض. الغرض منه هو ملء المساحات</li>
                 <li>
-                  النصية لإظهار الشكل النهائي للتصميم قبل إضافة المحتوى الفعلي
+                  <a href="" className="text-decoration-none ">
+                    "هذا نص وهمي يُستخدم لأغراض التصميم
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-decoration-none ">
+                    والعرض. الغرض منه هو ملء المساحات
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-decoration-none ">
+                    النصية لإظهار الشكل النهائي للتصميم قبل إضافة المحتوى الفعلي
+                  </a>
                 </li>
               </ul>
             </div>

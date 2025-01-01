@@ -12,4 +12,8 @@
     max-height: 203px;
 }
 .card-place-body {
+    background-color: #FFF8F1;
+}
+.hr {
+    width: 241px;
 }

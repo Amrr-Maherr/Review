@@ -5,7 +5,7 @@ import "../Style/NavBarStyle.css";
 function NavBar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg fixed-top bg-white">
+      <nav className="navbar navbar-expand-lg  bg-white">
         <div className="container">
           <button
             className="navbar-toggler text-white"
@@ -48,7 +48,7 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active text-dark" to="#">
+                <Link className="nav-link active text-dark" to="/home">
                   الرئيسية
                 </Link>
               </li>

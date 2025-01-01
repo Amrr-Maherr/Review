@@ -1,0 +1,41 @@
+.edit-btn button {
+        width: 140px;
+        height: 48px;
+        border-radius: 4px;
+        border: 2px solid #EDB82C;
+        font-size: 16px;
+        font-weight: 500;
+}
+.name h2 , .email h2 , .phone h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.name p , .email p , .phone p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #6B6E82;
+}
+.name .fa-user,
+.email .fa-envelope,
+.phone .fa-phone {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #F6F8FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name .fa-user {
+    color: orange;
+}
+.email .fa-envelope {
+    color: blue;
+}
+.phone .fa-phone{
+    color: skyblue;
+}

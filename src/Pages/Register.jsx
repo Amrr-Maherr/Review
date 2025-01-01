@@ -7,10 +7,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true);  //
   const navigate = useNavigate(); // هنا يجب استدعاء الدالة
   const showPassWord = () => {
-    setShow((prevShow) => !prevShow);
+    setShow(!show);
     console.log("test");
   };
   const FNameInput = useRef();
@@ -26,7 +26,6 @@ function Register() {
     const email = EmailInput.current.value.trim();
     const phoneNumber = NumberInput.current.value.trim();
     const password = PasswordInput.current.value.trim();
-
     if (
       firstName === "" ||
       secondName === "" ||
@@ -49,11 +48,10 @@ function Register() {
         phone: phoneNumber,
         password: password,
       };
-
       axios
         .post("https://dalil.mlmcosmo.com/api/register", formData)
         .then((response) => {
-          const token = response.data.token;
+          const token = response.data.token; // 
           if (token) {
             localStorage.setItem("authToken", token);
             Swal.fire({
@@ -63,6 +61,7 @@ function Register() {
               background: "#F9F9F9",
               confirmButtonColor: "#EDB82C",
               confirmButtonText: "تسجيل الدخول",
+              
             }).then((result) => {
               if (result.isConfirmed) {
                 navigate("/"); // التنقل هنا بعد التسجيل

@@ -48,6 +48,17 @@ function BestPlaces() {
   return (
     <section>
       <div className="container">
+        <div className="row">
+          <div className="col-12  d-flex align-items-end justify-content-center flex-column gap-4">
+            <div className="title">
+              <h3>افضل المطاعم</h3>
+            </div>
+            <div className="hr"></div>
+            <div className="text">
+              <p>استكشف افضل الاماكن القريبه منك</p>
+            </div>
+          </div>
+        </div>
         <Slider {...settings}>
           {Array.isArray(places) &&
             places.map((place) => (

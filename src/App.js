@@ -11,6 +11,7 @@ import Register from "./Pages/Register";
 import ForgetPassword from "./Pages/ForgetPassword";
 import PassCode from "./Pages/PassCode";
 import ResetPassword from "./Pages/ResetPassword";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="forget-password" element={<ForgetPassword />} />
           <Route path="reset-password" element={<ResetPassword/>} />
           <Route path="verify-code" element={<PassCode />} />
+          <Route path="profile" element={<Profile/>} />
         </Routes>
       </div>
     </BrowserRouter>
