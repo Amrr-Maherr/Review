@@ -12,6 +12,7 @@ import ForgetPassword from "./Pages/ForgetPassword";
 import PassCode from "./Pages/PassCode";
 import ResetPassword from "./Pages/ResetPassword";
 import Profile from "./Pages/Profile";
+import SinglePlace from "./Pages/SinglePlace";
 
 function App() {
   return (
@@ -22,9 +23,10 @@ function App() {
           <Route path="/" element={<LogIn />} />
           <Route path="register" element={<Register />} />
           <Route path="forget-password" element={<ForgetPassword />} />
-          <Route path="reset-password" element={<ResetPassword/>} />
+          <Route path="reset-password" element={<ResetPassword />} />
           <Route path="verify-code" element={<PassCode />} />
-          <Route path="profile" element={<Profile/>} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="/home/single-place/:id" element={<SinglePlace />} />
         </Routes>
       </div>
     </BrowserRouter>
